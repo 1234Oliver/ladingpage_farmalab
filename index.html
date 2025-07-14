@@ -9,6 +9,9 @@
     <link rel="stylesheet" href="style.css">
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <link rel="stylesheet" href="css/jQuery.verticalCarousel.css">
+    <link href="//cdn-images.mailchimp.com/embedcode/classic-061523.css" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" href="mailchimp.css">
+
 
 
 </head>
@@ -30,7 +33,7 @@
         <div class="container">
             <nav class="nav">
                 <a href="#" class="logo">
-                <img src="Logotipo.png" alt="Logo" class="logo-img" />
+                <img src="img/Logotipo.png" alt="Logo" class="logo-img" />
                 <span class="logo-text"></span>
                 </a>
 
@@ -258,16 +261,36 @@
             </div>
         </section>
 
-    <!-- CTA Final -->
-    <section class="final-cta">
-        <div class="container">
-            <h2>¿Necesitas Ayuda Profesional?</h2>
-            <p>Nuestro equipo de farmacéuticos está listo para brindarte la mejor atención y asesoramiento personalizado</p>
-            <a href="#contacto" class="btn btn-secondary">
-                <i class="fas fa-user-md"></i> Consultar Ahora
-            </a>
+<!-- CTA Final -->
+<section class="final-cta">
+  <div class="container">
+    <h2>¿Necesitas Ayuda Profesional?</h2>
+    <p>Nuestro equipo de farmacéuticos está listo para brindarte la mejor atención y asesoramiento personalizado.</p>
+    
+    <!-- Formulario Mailchimp -->
+    <div id="mc_embed_signup">
+      <form action="https://github.us15.list-manage.com/subscribe/post?u=11299f5d01a7d22d85f87faec&amp;id=9b30a26994&amp;f_id=00fa9fe1f0" method="post" target="_blank" novalidate>
+        <div class="mc-field-group">
+          <label for="mce-EMAIL">Correo electrónico <span class="asterisk">*</span></label>
+          <input type="email" name="EMAIL" id="mce-EMAIL" required placeholder="Tu correo electrónico">
         </div>
-    </section>
+        <div class="mc-field-group">
+          <label for="mce-FNAME">Nombre</label>
+          <input type="text" name="FNAME" id="mce-FNAME" placeholder="Tu nombre (opcional)">
+        </div>
+        <!-- Bot oculto anti-spam -->
+        <div style="position: absolute; left: -5000px;" aria-hidden="true">
+          <input type="text" name="b_11299f5d01a7d22d85f87faec_9b30a26994" tabindex="-1" value="">
+        </div>
+        <div class="clear">
+          <input type="submit" value="Suscribirse" name="subscribe" id="mc-embedded-subscribe" class="button">
+        </div>
+      </form>
+    </div>
+  </div>
+</section>
+
+
 
     <!-- Footer -->
     <footer class="footer">
@@ -540,6 +563,22 @@
             }
         });
     </script>
+
+    <script type="text/javascript" src="//s3.amazonaws.com/downloads.mailchimp.com/js/mc-validate.js"></script>
+<script type="text/javascript">
+  (function($) {
+    window.fnames = new Array(); 
+    window.ftypes = new Array();
+    fnames[0]='EMAIL';ftypes[0]='email';
+    fnames[1]='FNAME';ftypes[1]='text';
+    fnames[2]='LNAME';ftypes[2]='text';
+    fnames[3]='ADDRESS';ftypes[3]='address';
+    fnames[4]='PHONE';ftypes[4]='phone';
+    fnames[5]='BIRTHDAY';ftypes[5]='birthday';
+    fnames[6]='COMPANY';ftypes[6]='text';
+  }(jQuery));
+  var $mcj = jQuery.noConflict(true);
+</script>
 
 </body>
 </html>
