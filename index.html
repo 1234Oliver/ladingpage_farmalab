@@ -126,7 +126,7 @@
                     <div class="stat-label">Clientes Satisfechos</div>
                 </div>
                 <div class="stat-item">
-                    <div class="stat-number">24/7</div>
+                    <div class="stat-number no-animate">24/7</div>
                     <div class="stat-label">Atención Disponible</div>
                 </div>
             </div>
@@ -282,9 +282,10 @@
         <div style="position: absolute; left: -5000px;" aria-hidden="true">
           <input type="text" name="b_11299f5d01a7d22d85f87faec_9b30a26994" tabindex="-1" value="">
         </div>
-        <div class="clear">
-          <input type="submit" value="Suscríbete y cuida tu salud" name="subscribe" id="mc-embedded-subscribe" class="button">
-        </div>
+<div class="clear">
+  <input type="submit" value="Suscribete y Cuida tu Salud" name="subscribe" id="mc-embedded-subscribe" class="button">
+</div>
+
       </form>
     </div>
   </div>
@@ -348,21 +349,21 @@
 
         // Animación de números en estadísticas
         function animateNumbers() {
-            const numbers = document.querySelectorAll('.stat-number');
+            const numbers = document.querySelectorAll('.stat-number:not(.no-animate)');
             
             numbers.forEach(number => {
                 const text = number.textContent;
                 const target = parseInt(text.replace(/[^\d]/g, ''));
                 const increment = target / 50;
                 let current = 0;
-                
+
                 const timer = setInterval(() => {
                     current += increment;
                     if (current >= target) {
                         current = target;
                         clearInterval(timer);
                     }
-                    
+
                     // Mantener el formato original (+, /, etc.)
                     if (text.includes('+')) {
                         number.textContent = Math.floor(current).toLocaleString() + '+';
@@ -564,21 +565,37 @@
         });
     </script>
 
+    <!-- script para formulario mailchimp -->
     <script type="text/javascript" src="//s3.amazonaws.com/downloads.mailchimp.com/js/mc-validate.js"></script>
-<script type="text/javascript">
-  (function($) {
-    window.fnames = new Array(); 
-    window.ftypes = new Array();
-    fnames[0]='EMAIL';ftypes[0]='email';
-    fnames[1]='FNAME';ftypes[1]='text';
-    fnames[2]='LNAME';ftypes[2]='text';
-    fnames[3]='ADDRESS';ftypes[3]='address';
-    fnames[4]='PHONE';ftypes[4]='phone';
-    fnames[5]='BIRTHDAY';ftypes[5]='birthday';
-    fnames[6]='COMPANY';ftypes[6]='text';
-  }(jQuery));
-  var $mcj = jQuery.noConflict(true);
-</script>
+    <script type="text/javascript">
+    (function($) {
+        window.fnames = new Array(); 
+        window.ftypes = new Array();
+        fnames[0]='EMAIL';ftypes[0]='email';
+        fnames[1]='FNAME';ftypes[1]='text';
+        fnames[2]='LNAME';ftypes[2]='text';
+        fnames[3]='ADDRESS';ftypes[3]='address';
+        fnames[4]='PHONE';ftypes[4]='phone';
+        fnames[5]='BIRTHDAY';ftypes[5]='birthday';
+        fnames[6]='COMPANY';ftypes[6]='text';
+    }(jQuery));
+    var $mcj = jQuery.noConflict(true);
+    </script>
+
+    <!-- script para limpiar campos del formulario después del envío -->
+    <script>
+    document.addEventListener('DOMContentLoaded', () => {
+        const form = document.querySelector('#mc_embed_signup form');
+
+        if (form) {
+        form.addEventListener('submit', () => {
+            setTimeout(() => {
+            form.reset(); // Limpia los campos tras el envío
+            }, 500); // Espera 0.5s para no interferir con el envío
+        });
+        }
+    });
+    </script>
 
 </body>
 </html>
